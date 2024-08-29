@@ -4,7 +4,7 @@ export const Trend = () => {
       <div className="container  mx-auto">
         <p>Trend</p>
         <div className="flex gap-8">
-          <div className="bg-[url('/Rectangle38.png')] flex flex-col justify-end w-[289px] h-[320px]">
+          <div className="bg-[url('/Image38.png')] flex flex-col justify-end w-[289px] h-[320px]">
             <p className="w-32 h-6 flex justify-center text-[#FFFFFF]  rounded-lg bg-[#4B6BFB] ">
               Technology
             </p>

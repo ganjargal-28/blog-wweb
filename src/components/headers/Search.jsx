@@ -1,7 +1,7 @@
 export const Search = () => {
   return (
-    <div className="flex border-4 items-center">
-      <input type="Search" className="text-black" />
+    <div className="flex items-center">
+      <input type="Search" className=" rounded-lg" />
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"

@@ -5,7 +5,7 @@ export const Menu = () => {
         <p className="text-4xl">all blog post</p>
         <div className="flex justify-between">
           <div className="flex gap-4">
-            <p>all</p>
+            <p className="text-orange-400">all</p>
             <p>Desing</p>
             <p>Travel</p>
             <p>Fashion</p>
