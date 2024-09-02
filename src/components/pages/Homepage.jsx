@@ -13,9 +13,13 @@ import { Trend } from "../trend/Trend";
 import { Footer } from "../footer/Footer";
 import { Footer2 } from "../footer/Footer2";
 import { Footerz } from "../footer/Footerz";
+import { Allblogplace } from "../blogplace/Allblogplace";
+import { Info } from "../blogplace/Info";
+import { Sign } from "../footer/Sign";
+import { Error } from "./Error";
 export default function Homepage() {
   return (
-    <div>
+    <div className="md:">
       <Header />
       <Hero />
       <Trend />
@@ -24,6 +28,10 @@ export default function Homepage() {
       <Footer />
       <Footerz />
       <Footer2 />
+      <Allblogplace />
+      {/* <Info /> */}
+      {/* <Sign /> */}
+      {/* <Error /> */}
     </div>
   );
 }

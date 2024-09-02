@@ -1,0 +1,14 @@
+// import { Blogplace } from "./Blogplace";
+
+import { Blogplace } from "../blogplace/Blogplace";
+import { Header } from "../headers/Header";
+
+// import { Header } from "../headers/Header";
+export const Blog = () => {
+  return (
+    <div>
+      <Header />
+      <Blogplace />;
+    </div>
+  );
+};

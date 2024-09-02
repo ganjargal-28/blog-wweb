@@ -9,8 +9,9 @@ import { Search } from "./Search";
 export const Header = () => {
   return (
     <div className="w-full  ">
-      <div className="container mx-auto  flex justify-between">
+      <div className="container mx-auto mt-5 flex justify-between">
         <Meta />
+
         <Paragraph />
         <Search />
       </div>

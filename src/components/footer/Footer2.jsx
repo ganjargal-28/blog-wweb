@@ -1,7 +1,7 @@
 export const Footer2 = () => {
   return (
     <div className="w-full ">
-      <div className="container flex justify-between mx-auto">
+      <div className="container mt-5 flex justify-between mx-auto">
         <div className="flex">
           <div>
             <svg

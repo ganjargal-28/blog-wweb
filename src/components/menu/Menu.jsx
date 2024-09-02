@@ -1,7 +1,7 @@
 export const Menu = () => {
   return (
     <div className="w-full ">
-      <div className="container mx-auto">
+      <div className="container mt-5 mx-auto">
         <p className="text-4xl">all blog post</p>
         <div className="flex justify-between">
           <div className="flex gap-4">
