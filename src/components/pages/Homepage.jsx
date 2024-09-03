@@ -18,6 +18,12 @@ import { Info } from "../blogplace/Info";
 import { Sign } from "../footer/Sign";
 import { Error } from "./Error";
 export default function Homepage() {
+  const [card, setCard] = useState([]);
+  const fetchData = () => {
+    fetch("https://dev.to/api/articles")
+      .then((response) => response.json())
+      .then((data) => setArticles(data));
+  };
   return (
     <div className="md:">
       <Header />
@@ -28,7 +34,7 @@ export default function Homepage() {
       <Footer />
       <Footerz />
       <Footer2 />
-      <Allblogplace />
+      {/* <Allblogplace /> */}
       {/* <Info /> */}
       {/* <Sign /> */}
       {/* <Error /> */}

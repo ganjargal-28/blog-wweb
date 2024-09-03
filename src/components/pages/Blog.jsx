@@ -1,6 +1,7 @@
 // import { Blogplace } from "./Blogplace";
 
 import { Blogplace } from "../blogplace/Blogplace";
+import { Footer } from "../footer/Footer";
 import { Header } from "../headers/Header";
 
 // import { Header } from "../headers/Header";
@@ -9,6 +10,7 @@ export const Blog = () => {
     <div>
       <Header />
       <Blogplace />;
+      <Footer />
     </div>
   );
 };

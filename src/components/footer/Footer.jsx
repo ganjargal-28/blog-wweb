@@ -1,6 +1,6 @@
 export const Footer = () => {
   return (
-    <div className="w-full ">
+    <div className="w-full bg-[#E8E8EA]">
       <div className="container mt-5 mx-auto h-auto  ">
         <div className="flex justify-between">
           <div className="w-[289px] flex flex-col gap-3">
@@ -14,9 +14,11 @@ export const Footer = () => {
             <p>Phone : 880 123 456 789</p>
           </div>
           <div className="flex flex-col gap-3">
-            <p>Blog</p>
-            <p>Contact </p>
-            <p>Home </p>
+            <a href="./">Home</a>
+
+            <a href="./blog-list">Blog</a>
+
+            <a href="contact-us">Contact</a>
           </div>
           <div className="flex pr-[300px] gap-4">
             <svg
