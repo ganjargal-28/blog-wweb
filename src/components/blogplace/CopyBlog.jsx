@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 export const Blogplace = () => {
   const [articles, setArticles] = useState([]);
-  const [page, setPage] = useState(9); // usestate bolgoj
+  const [page, setPage] = useState(12); // usestate bolgoj
   const fetchData = () => {
     fetch(`https://dev.to/api/articles?per_page=${page}`) // datagaas duudaad
       .then((response) => response.json())
@@ -21,18 +21,16 @@ export const Blogplace = () => {
         {articles.map((article) => {
           // zugluulna => articles.map => ((article) ene bol return dotor baigaa zuiliig aguulna
           return (
-            <Link href={`/${article.id}`}>
-              <div className="w-[392px] flex flex-col gap-3 border-2 p-2 border-[#E8E8EA] rounded-lg ">
-                <div
-                  className={"w-[360px] h-[240px] rounded-lg "}
-                  style={{ backgroundImage: `url(${article.cover_image})` }}
-                ></div>
-                <p className="w-32 h-6 flex justify-center text-[#FFFFFF]  rounded-lg bg-[#4B6BFB]">
-                  {article.tag_list[0]}
-                </p>
-                <p className="text-3xl line-clamp-3 ">{article.description}</p>
-              </div>
-            </Link>
+            <div className="w-[392px] flex flex-col gap-3 border-2 p-2 border-[#E8E8EA] rounded-lg ">
+              <div
+                className={"w-[360px] h-[240px] rounded-lg "}
+                style={{ backgroundImage: `url(${article.cover_image})` }}
+              ></div>
+              <p className="w-32 h-6 flex justify-center text-[#FFFFFF]  rounded-lg bg-[#4B6BFB]">
+                {article.tag_list[0]}
+              </p>
+              <p className="text-3xl">{article.description}</p>
+            </div>
           );
         })}
       </div>

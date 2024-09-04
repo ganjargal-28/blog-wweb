@@ -9,7 +9,7 @@ export const Blog = () => {
   return (
     <div>
       <Header />
-      <Blogplace />;
+      <Blogplace />
       <Footer />
     </div>
   );

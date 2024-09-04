@@ -17,13 +17,9 @@ import { Allblogplace } from "../blogplace/Allblogplace";
 import { Info } from "../blogplace/Info";
 import { Sign } from "../footer/Sign";
 import { Error } from "./Error";
-export default function Homepage() {
-  const [card, setCard] = useState([]);
-  const fetchData = () => {
-    fetch("https://dev.to/api/articles")
-      .then((response) => response.json())
-      .then((data) => setArticles(data));
-  };
+import { useState, useEffect } from "react";
+
+const Homepage = () => {
   return (
     <div className="md:">
       <Header />
@@ -34,10 +30,12 @@ export default function Homepage() {
       <Footer />
       <Footerz />
       <Footer2 />
+
       {/* <Allblogplace /> */}
       {/* <Info /> */}
       {/* <Sign /> */}
       {/* <Error /> */}
     </div>
   );
-}
+};
+export default Homepage;
