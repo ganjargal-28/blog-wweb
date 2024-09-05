@@ -1,6 +1,6 @@
 // import { Blogplace } from "./Blogplace";
 
-import { Blogplace } from "../blogplace/Blogplace";
+import { Blogplace } from "./Blogplace";
 import { Footer } from "../footer/Footer";
 import { Header } from "../headers/Header";
 

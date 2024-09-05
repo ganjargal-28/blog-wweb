@@ -5,7 +5,7 @@
 // import { Blogplace } from "@/components/Blogplace";
 
 // import { Blogplace } from "../blogplace/Blogplace";
-import { Blogplace } from "../blogplace/Blogplace";
+import { Blogplace } from "./Blogplace";
 import { Header } from "../headers/Header";
 import { Hero } from "../hero/Hero";
 import { Menu } from "../menu/Menu";

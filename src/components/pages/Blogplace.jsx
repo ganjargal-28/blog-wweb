@@ -19,28 +19,28 @@ export const Blogplace = () => {
   );
 
   return (
-    <div className="container mt-auto justify-between flex-wrap gap-2 flex mt-14">
-   <input type="text" placeholder="search" className="mb-4 p-2 border border-gray-300 rounded
-   " onChange={e => setSearchTerm(e.target.value)} />
-   {filteredArticles.map(article =>(
-    
-   ))}
-    </div>;
+    //   <div className="container mt-auto justify-between flex-wrap gap-2 flex mt-14">
+    //  <input type="text" placeholder="search" className="mb-4 p-2 border border-gray-300 rounded
+    //  " onChange={e => setSearchTerm(e.target.value)} />
+    //  {filteredArticles.map(article =>(
+
+    //  ))}
+    //   </div>;
     <div className="w-full   h-auto ">
       <div className="container  mt-11 justify-between  flex-wrap gap-2 flex mx-auto ">
-        {articles.map((article) => {
+        {articles.map((articles) => {
           // zugluulna => articles.map => ((article) ene bol return dotor baigaa zuiliig aguulna
           return (
-            <Link href={`/${article.id}`}>
+            <Link href={`/blogs/${articles.id}`}>
               <div className="w-[392px] flex flex-col gap-3 border-2 p-2 border-[#E8E8EA] rounded-lg ">
                 <div
-                  className={"w-[360px] h-[240px] rounded-lg "}
-                  style={{ backgroundImage: `url(${article.cover_image})` }}
+                  className={"w-[360px] h-[240px] rounded-lg hover:scale-105  "}
+                  style={{ backgroundImage: `url(${articles.cover_image})` }}
                 ></div>
                 <p className="w-32 h-6 flex justify-center text-[#FFFFFF]  rounded-lg bg-[#4B6BFB]">
-                  {article.tag_list[0]}
+                  {articles.tag_list[0]}
                 </p>
-                <p className="text-3xl line-clamp-3 ">{article.description}</p>
+                <p className="text-3xl line-clamp-3 ">{articles.description}</p>
               </div>
             </Link>
           );
