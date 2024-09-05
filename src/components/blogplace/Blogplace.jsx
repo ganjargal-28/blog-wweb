@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import Link from "next/link";
 export const Blogplace = () => {
   const [articles, setArticles] = useState([]);
   const [page, setPage] = useState(9); // usestate bolgoj
@@ -14,8 +14,18 @@ export const Blogplace = () => {
   useEffect(() => {
     fetchData();
   }, [page]);
+  const filteredArticles = articles.filter((article) =>
+    article.title.toLowerCase()
+  );
 
   return (
+    <div className="container mt-auto justify-between flex-wrap gap-2 flex mt-14">
+   <input type="text" placeholder="search" className="mb-4 p-2 border border-gray-300 rounded
+   " onChange={e => setSearchTerm(e.target.value)} />
+   {filteredArticles.map(article =>(
+    
+   ))}
+    </div>;
     <div className="w-full   h-auto ">
       <div className="container  mt-11 justify-between  flex-wrap gap-2 flex mx-auto ">
         {articles.map((article) => {

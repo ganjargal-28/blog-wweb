@@ -1,3 +1,5 @@
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react/cjs/react.production.min";
 const { useRouter } = require("next/router");
 
 const Singlepost = () => {
@@ -5,7 +7,7 @@ const Singlepost = () => {
 
   const [articles, setArticles] = useState([]);
   const fetchData = () => {
-    fetch(`https://dev.to/api/articles/150589`) // datagaas duudaad
+    fetch(`https://dev.to/api/articles/${router.query.id}`) // datagaas duudaad
       .then((response) => response.json())
       .then((data) => setArticles(data));
   };
@@ -13,5 +15,11 @@ const Singlepost = () => {
     fetchData();
   }, []);
 
-  console.log(router.query);
+  console.log(articles);
+  return (
+    <div>
+      <h1>{articles.title}</h1>
+      <h1>{articles.description}</h1>
+    </div>
+  );
 };
