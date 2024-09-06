@@ -1,22 +1,28 @@
 import { useEffect, useState } from "react";
 import { All, Design } from "../svgss/Design";
+import { Blogplace } from "../blogplace/Blogplace";
 
 export const Menu = () => {
   const [filter, setFilter] = useState("");
-  const [filteradd, setFilteradd] = useState(9);
+  const [page, setPage] = useState(9); // usestate bolgoj
+
+  // const [filteradd, setFilteradd] = useState(9);
   const [articles, setArticles] = useState([]);
   const fetchData = () => {
-    fetch(`https://dev.to/api/articles?per_page=${filteradd}&tag=${filter}`)
+    fetch(`https://dev.to/api/articles?per_page=${page}&tag=${filter}`)
       .then((response) => response.json())
       .then((data) => setArticles(data));
   };
   useEffect(() => {
     fetchData();
-  }, [filteradd, filter]);
+  }, [filter, page]);
 
+  const handleMorePageClick = () => {
+    setPage(page + 3); // datagaasaa 3 nemne
+  };
   const handleclick = (filterTag) => {
-    setFilter("discuss");
-    console.log(filterTag);
+    setFilter(filterTag);
+    console.log("filterTag filterTag filterTag", filterTag);
   };
   return (
     <div className="w-full ">
@@ -27,9 +33,11 @@ export const Menu = () => {
             <button onClick={() => handleclick("")} className="text-orange-400">
               all
             </button>
-            <Design handleclick={handleclick} />
+            {/* <Design handleclick={handleclick} /> */}
 
-            <button onClick={() => handleclick("travel")}>Travel</button>
+            <button onClick={() => handleclick("javascript")}>
+              javascript
+            </button>
             <button onClick={() => handleclick("fashion")}>Fashion</button>
             <button onClick={() => handleclick("technology")}>
               Technology
@@ -40,7 +48,19 @@ export const Menu = () => {
             <button>view all</button>
           </div>
         </div>
+        {/* {articles.map((article) => {
+          return (
+            <div>
+              Filtered article
+              <p>{article.title}</p>
+            </div>
+          );
+        })} */}
       </div>
+      <Blogplace
+        articles={articles}
+        handleMorePageClick={handleMorePageClick}
+      />
     </div>
   );
 };

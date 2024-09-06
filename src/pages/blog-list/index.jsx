@@ -1,12 +1,12 @@
+import { Blogplace } from "@/components/blogplace/Blogplace";
 import { Footer } from "@/components/footer/Footer";
 import { Header } from "@/components/headers/Header";
-import { Copy } from "@/components/pages/Copy";
 
 const Blogs = () => {
   return (
     <div>
       <Header />
-      <Copy />
+      <Blogplace />
       <Footer />
     </div>
   );

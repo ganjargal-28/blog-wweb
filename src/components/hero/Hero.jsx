@@ -106,7 +106,7 @@ export const Hero = () => {
               className="w-full h-[600px] bg-cover rounded-lg"
               style={{ backgroundImage: `url(${article.cover_image})` }}
             >
-              <div className="flex flex-col w-full p-4 h-full justify-end">
+              <div className="flex flex-col w-[1200px] p-4 h-full justify-end mx-6">
                 <div className="w-[598px] h-[200px] bg-white rounded-xl">
                   <div className="gap-7 p-3 flex flex-col">
                     <p className="w-32 h-6 flex justify-center text-white rounded-lg bg-blue-500">

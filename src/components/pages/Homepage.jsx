@@ -5,6 +5,7 @@ import { Trend } from "../trend/Trend";
 import { Footer } from "../footer/Footer";
 
 import { Blogplace } from "../blogplace/Blogplace";
+import { useEffect, useState } from "react";
 
 const Homepage = () => {
   return (
@@ -13,7 +14,6 @@ const Homepage = () => {
       <Hero />
       <Trend />
       <Menu />
-      <Blogplace />
       <Footer />
     </div>
   );
