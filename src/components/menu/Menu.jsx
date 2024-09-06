@@ -1,9 +1,22 @@
 import { useEffect, useState } from "react";
 import { All, Design } from "../svgss/Design";
 
-export const Menu = ({ setFilter }) => {
+export const Menu = () => {
+  const [filter, setFilter] = useState("");
+  const [filteradd, setFilteradd] = useState(9);
+  const [articles, setArticles] = useState([]);
+  const fetchData = () => {
+    fetch(`https://dev.to/api/articles?per_page=${filteradd}&tag=${filter}`)
+      .then((response) => response.json())
+      .then((data) => setArticles(data));
+  };
+  useEffect(() => {
+    fetchData();
+  }, [filteradd, filter]);
+
   const handleclick = (filterTag) => {
-    setFilter(filterTag);
+    setFilter("discuss");
+    console.log(filterTag);
   };
   return (
     <div className="w-full ">
