@@ -1,10 +1,3 @@
-// import { Header } from "@/components/Header";
-// import { Hero } from "@/components/Hero";
-// import { Trend } from "@/components/Trend";
-// import { Menu } from "@/components/Menu";
-// import { Blogplace } from "@/components/Blogplace";
-
-// import { Blogplace } from "../blogplace/Blogplace";
 import { Blogplace } from "./Blogplace";
 import { Header } from "../headers/Header";
 import { Hero } from "../hero/Hero";
@@ -20,6 +13,8 @@ import { Error } from "./Error";
 import { useState, useEffect } from "react";
 
 const Homepage = () => {
+  // setFilter =
+
   return (
     <div className="md:">
       <Header />
@@ -28,13 +23,6 @@ const Homepage = () => {
       <Menu />
       <Blogplace />
       <Footer />
-      <Footerz />
-      <Footer2 />
-
-      {/* <Allblogplace /> */}
-      {/* <Info /> */}
-      {/* <Sign /> */}
-      {/* <Error /> */}
     </div>
   );
 };

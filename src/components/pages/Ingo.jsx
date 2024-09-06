@@ -1,23 +1,6 @@
-// import { useRouter } from "next/router";
-import { Footer } from "@/components/footer/Footer";
-import { Header } from "@/components/headers/Header";
-import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
+import { Info } from "@/components/blogplace/Info";
 
-const Singlepost = () => {
-  const router = useRouter();
-
-  const [articles, setArticles] = useState([]);
-  const fetchData = () => {
-    fetch(`https://dev.to/api/articles/${router.query.id}`) // datagaas duudaad
-      .then((response) => response.json())
-      .then((data) => setArticles(data));
-  };
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  console.log(articles);
+export const Singlepost = () => {
   return (
     <div className="w-full ">
       <div className="container mx-auto ">

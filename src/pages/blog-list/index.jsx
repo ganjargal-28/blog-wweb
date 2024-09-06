@@ -1,5 +1,14 @@
-import { Blog } from "@/components/pages/Blog";
+import { Footer } from "@/components/footer/Footer";
+import { Header } from "@/components/headers/Header";
+import { Copy } from "@/components/pages/Copy";
 
-export default function BlogList() {
-  return <Blog />;
-}
+const Blogs = () => {
+  return (
+    <div>
+      <Header />
+      <Copy />
+      <Footer />
+    </div>
+  );
+};
+export default Blogs;

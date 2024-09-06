@@ -68,7 +68,7 @@ export const Hero = () => {
   // Fetch data from API
   const fetchData = async () => {
     try {
-      const response = await fetch("https://dev.to/api/articles?per_page=1"); // Fetch articles from dev.to
+      const response = await fetch("https://dev.to/api/articles?per_page=4"); // Fetch articles from dev.to
       const result = await response.json();
       setArticles(result); // Set articles state
     } catch (error) {
@@ -80,9 +80,9 @@ export const Hero = () => {
   const handleScroll = (direction) => {
     if (containerRef.current) {
       if (direction === "left") {
-        containerRef.current.scrollBy({ left: -300, behavior: "smooth" });
+        containerRef.current.scrollBy({ left: -500, behavior: "smooth" });
       } else {
-        containerRef.current.scrollBy({ left: 300, behavior: "smooth" });
+        containerRef.current.scrollBy({ left: 500, behavior: "smooth" });
       }
     }
   };
