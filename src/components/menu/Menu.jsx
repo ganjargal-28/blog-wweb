@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import { All, Design } from "../svgss/Design";
+
 import { Blogplace } from "../blogplace/Blogplace";
 
 export const Menu = () => {
   const [filter, setFilter] = useState("");
   const [page, setPage] = useState(9); // usestate bolgoj
 
-  // const [filteradd, setFilteradd] = useState(9);
   const [articles, setArticles] = useState([]);
   const fetchData = () => {
     fetch(`https://dev.to/api/articles?per_page=${page}&tag=${filter}`)
@@ -48,14 +47,6 @@ export const Menu = () => {
             <button>view all</button>
           </div>
         </div>
-        {/* {articles.map((article) => {
-          return (
-            <div>
-              Filtered article
-              <p>{article.title}</p>
-            </div>
-          );
-        })} */}
       </div>
       <Blogplace
         articles={articles}

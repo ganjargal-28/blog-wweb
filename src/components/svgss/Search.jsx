@@ -4,8 +4,10 @@ export const Search = () => {
       <input
         type="text "
         placeholder="search"
-        className=" border-2 rounded-lg"
+        onChange={(even) => handleSearch(even.targer.value)}
+        className=" border-2  rounded-lg"
       />
+
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"

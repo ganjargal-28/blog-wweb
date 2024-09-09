@@ -1,11 +1,10 @@
-import { Info } from "@/components/blogplace/Info";
-
-export const Singlepost = () => {
+import { Header } from "../headers/Header";
+import { Footer } from "../footer/Footer";
+export const SinglePost = ({ article }) => {
   return (
-    <div className="w-full ">
-      <div className="container mx-auto ">
-        <div>
-          <Header />
+    <div>
+      <div className="w-full ">
+        <div className="container mx-auto ">
           <div>
             <p className=" max-w-[804px] text-3xl">
               The Impact of Technology on the Workplace: How Technology is
@@ -18,10 +17,10 @@ export const Singlepost = () => {
             </div>
             <div
               className={"w-[804px] h-[400px] rounded-lg "}
-              style={{ backgroundImage: `url(${articles.cover_image})` }}
+              style={{ backgroundImage: `url(${article.cover_image})` }}
             ></div>
-            <h1>{articles?.tag_list}</h1>
-            <p>{articles?.description}</p>
+            <h1>{article?.tag_list}</h1>
+            <p>{article?.description}</p>
 
             <div className="max-w-[804px] ">
               <div className="gap-2 flex flex-col">
@@ -71,9 +70,8 @@ export const Singlepost = () => {
             </div>
           </div>
         </div>
-        <Footer />
       </div>
     </div>
   );
 };
-export default Singlepost;
+export default SinglePost;

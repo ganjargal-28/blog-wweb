@@ -1,6 +1,3 @@
-import { Footer2 } from "./Footer2";
-import { Footerz } from "./Footerz";
-
 export const Footer = () => {
   return (
     <div className="w-full bg-[#E8E8EA]">
@@ -121,8 +118,6 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-      <Footerz />
-      <Footer2 />
     </div>
   );
 };
