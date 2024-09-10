@@ -30,3 +30,19 @@ export const Search = () => {
     </div>
   );
 };
+// const [filter, setFilter] = useState([]);
+// const [filtered, setFiltered] = useState([]);
+// const [articles, setArticles] = useState([]);
+// const [page, setPage] = useState(9); // usestate bolgoj
+
+// const fetchData = () => {
+//   fetch(`https://dev.to/api/articles?per_page=${page}`) // datagaas duudaad
+//     .then((response) => response.json())
+//     .then((data) => setArticles(data));
+// };
+// useEffect(() => {
+//   fetchData();
+// }, [page]);
+// useEffect(() => {
+//   setFiltered(articles);
+// }, [articles]);

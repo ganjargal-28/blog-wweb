@@ -14,9 +14,9 @@ export const Blogplace = () => {
   useEffect(() => {
     fetchData();
   }, [page]);
-  const filteredArticles = articles.filter((article) =>
-    article.title.toLowerCase()
-  );
+  // const filteredArticles = articles.filter((article) =>
+  //   article.title.toLowerCase()
+  // );
 
   return (
     //   <div className="container mt-auto justify-between flex-wrap gap-2 flex mt-14">
