@@ -9,7 +9,7 @@ export const Hero = () => {
     try {
       const response = await fetch(
         "https://dev.to/api/articles?per_page=6&top=10"
-      ); // Fetch articles from dev.to
+      ); // davtalt
       const result = await response.json();
       setArticles(result); // Set articles state
     } catch (error) {
@@ -36,7 +36,7 @@ export const Hero = () => {
   return (
     <div className="w-full">
       <div className="container mt-5 mx-auto">
-        {/* Scrollable container */}
+        {/* Scrollable container avna */}
         <div
           ref={containerRef}
           className="overflow-x-scroll scroll-smooth flex gap-4"
@@ -62,7 +62,7 @@ export const Hero = () => {
           ))}
         </div>
 
-        {/* Scroll buttons */}
+        {/* Scrolliin buttons */}
         <div className="flex gap-4 justify-end p-2">
           <div
             className="border-2 w-7 h-7 flex items-center justify-center rounded-lg cursor-pointer"
