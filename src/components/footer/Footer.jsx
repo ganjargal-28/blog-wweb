@@ -1,12 +1,9 @@
-import { Footer2 } from "./Footer2";
-import { Footerz } from "./Footerz";
-
 export const Footer = () => {
   return (
     <div className="w-full bg-[#E8E8EA]">
       <div className="container mt-5 mx-auto h-auto  ">
-        <div className="flex justify-between">
-          <div className="w-[289px] flex flex-col gap-3">
+        <div className="flex flex-col md:flex-row justify-between">
+          <div className="w-full md:w-[289px] flex flex-col gap-3 mb-4 md:mb-0">
             <p>about</p>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -121,8 +118,6 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-      <Footerz />
-      <Footer2 />
     </div>
   );
 };
