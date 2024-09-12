@@ -4,10 +4,16 @@ const UseEffectPage = () => {
   const [articles, setArticles] = useState([]);
   const [page, setPage] = useState(1);
 
-  const fetchData = () => {
-    fetch(`https://dev.to/api/articles?per_page=10&page=${page}`)
-      .then((response) => response.json())
-      .then((data) => setArticles(data));
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        `https://dev.to/api/articles?per_page=10&page=${page}`
+      );
+      const data = await response.json();
+      setArticles(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleMorePageClick = () => {

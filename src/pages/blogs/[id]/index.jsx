@@ -10,10 +10,17 @@ const SinglepostDetail = () => {
   const [article, setArticle] = useState([]);
   console.log("router.query.id", router.query.id);
 
-  const fetchData = () => {
-    fetch(`https://dev.to/api/articles/${router.query.id}`) // datagaas duudaad
-      .then((response) => response.json())
-      .then((data) => setArticle(data));
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        `https://dev.to/api/articles/${router.query.id}`
+      );
+      const data = await response.json();
+      setArticle(data);
+    } catch (error) {
+      console.log(error);
+    }
+    // datagaas duudaad
   };
   useEffect(() => {
     fetchData();

@@ -5,10 +5,17 @@ import { TrendingList } from "./TrendingList";
 export const Trend = () => {
   const [articles, setArticles] = useState([]);
   const [page, setPage] = useState(4); // usestate bolgoj
-  const fetchData = () => {
-    fetch(`https://dev.to/api/articles?per_page=${page}&top=2`) // datagaas duudaad
-      .then((response) => response.json())
-      .then((data) => setArticles(data));
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        `https://dev.to/api/articles?per_page=${page}&top=2`
+      );
+      const data = response.json();
+      setArticles(data);
+    } catch (error) {
+      console.log(error);
+    }
+    // datagaas duudaad
   };
 
   useEffect(() => {

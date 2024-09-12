@@ -3,16 +3,21 @@ import { Paragraph } from "./Paragraph";
 import { Search } from "../svgss/Search";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { HamburgerBar } from "../svgss/HamburgerBar";
 
-export const Header = () => {
+export const Header = ({ changeScreen }) => {
   const [clickbutton, setClickbutton] = useState("home");
   const [isOpen, setIsopen] = useState(false);
   const [data, setData] = useState([]);
   const [articles, setArticles] = useState([]);
-  const fetchData = () => {
-    fetch(`https://dev.to/api/articles`)
-      .then((response) => response.json())
-      .then((data) => setArticles(data));
+  const fetchData = async () => {
+    try {
+      const response = await fetch(`https://dev.to/api/articles`);
+      const data = await response.json();
+      setData(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
   const handleSearch = (value) => {
     const filterArray = articles.filter((filter) =>
@@ -30,25 +35,32 @@ export const Header = () => {
   useEffect(() => {
     handleclick();
   }, []);
+
   return (
     <div className="w-full ">
-      <div className="container mx-auto mt-5 flex flex-col sm:flex-row justify-between items-center sm:items-start relative space-y-4 sm:space-y-0">
+      <div className="container  mx-auto mt-5 flex flex-col sm:flex-row justify-between items-center sm:items-start relative space-y-4 sm:space-y-0">
         <Meta />
-        <Paragraph />
+        <div className=" md:flex hidden">
+          <Paragraph />
+        </div>
 
-        <div className="flex items-center space-x-3 p-2 text-white rounded-lg shadow-lg transition-transform duration-300 hover:shadow-[0_0_15px_rgba(72,187,255,0.8)]">
+        <button className="md:hidden pr-2 flex" onClick={changeScreen}>
+          <HamburgerBar />
+        </button>
+
+        <div className="  hidden md:flex items-center space-x-3 p-2 text-white rounded-lg shadow-lg transition-transform duration-300 hover:shadow-[0_0_15px_rgba(72,187,255,0.8)]">
           <input
             type="text"
             placeholder="search"
             onChange={(event) => handleSearch(event.target.value)}
             className=" border-2 text-black rounded-lg bg-[var(--secondary-100)] outline-none"
           />
-          <div className="absolute top-[40px] h-[400px] overflow-scroll max-w-[400px] bg-white rounded-lg  outline-none z-10">
+          <div className="absolute top-[40px] h-[400px] overflow-scroll hover:bg-blue-100 max-w-[400px] bg-white rounded-lg  outline-none z-10">
             <div className="flex flex-col flex-wrap gap-5 text-black bg-transparent">
               {data.map((articles, index) => (
                 <Link href={`blogs/${articles.id}`}>
                   <div
-                    className="w-full h-auto border border-[#A1A1A1] rounded-lg"
+                    className="w-full h-auto border hover:bg-blue-300 border-[#A1A1A1] rounded-lg"
                     key={index}
                   >
                     {articles.title}

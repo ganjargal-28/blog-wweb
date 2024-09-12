@@ -1,6 +1,10 @@
+import { Paragraph } from "../headers/Paragraph";
+import { Meta } from "../svgss/Meta";
+import { Footerparagraph } from "./Footerparagraph";
+
 export const Footer = () => {
   return (
-    <div className="w-full bg-[#E8E8EA]">
+    <div className="w-full bg-[#F6F6F7]">
       <div className="container mt-5 mx-auto h-auto  ">
         <div className="flex flex-col md:flex-row justify-between">
           <div className="w-full md:w-[289px] flex flex-col gap-3 mb-4 md:mb-0">
@@ -116,6 +120,11 @@ export const Footer = () => {
               </defs>
             </svg>
           </div>
+        </div>
+        <div className="w-full mt-3 border-2 border-black "></div>
+        <div className="flex pt-8 justify-between ">
+          <Meta />
+          <Footerparagraph />
         </div>
       </div>
     </div>

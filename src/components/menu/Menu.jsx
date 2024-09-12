@@ -7,12 +7,18 @@ import { Blogplace } from "../blogplace/Blogplace";
 export const Menu = () => {
   const [filter, setFilter] = useState("");
   const [page, setPage] = useState(9); // usestate bolgoj
-
+  const [blogplaceArticles, setblogplaceArticles] = useState([]);
   const [articles, setArticles] = useState([]);
-  const fetchData = () => {
-    fetch(`https://dev.to/api/articles?per_page=${page}&tag=${filter}`)
-      .then((response) => response.json())
-      .then((data) => setArticles(data));
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        `https://dev.to/api/articles?per_page=${page}&tag=${filter}`
+      );
+      const data = await response.json();
+      setblogplaceArticles(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
   useEffect(() => {
     fetchData();
@@ -56,7 +62,7 @@ export const Menu = () => {
         </div>
       </div>
       <Blogplace
-        articles={articles}
+        blogplaceArticles={blogplaceArticles}
         handleMorePageClick={handleMorePageClick}
       />
     </div>
