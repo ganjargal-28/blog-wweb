@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 
 export const Hero = () => {
@@ -28,7 +29,6 @@ export const Hero = () => {
     }
   };
 
-  // Fetch data on component mount
   useEffect(() => {
     fetchData();
   }, []);
@@ -42,27 +42,31 @@ export const Hero = () => {
           className="overflow-x-scroll scroll-smooth flex gap-4"
         >
           {heroArticles.map((heroArticles, index) => (
-            <div
-              key={index}
-              className="w-full sm:w-[800px] md:w-[1000px] lg:w-[1200px] h-[600px] bg-cover rounded-lg"
-              style={{ backgroundImage: `url(${heroArticles.cover_image})` }}
-            >
-              <div className="flex flex-col w-[1200px] p-4 h-full justify-end mx-6">
-                <div className="w-full sm:w-[598px] h-[200px] bg-white rounded-xl">
-                  <div className="gap-7 p-3 flex flex-col">
-                    <p className="w-32 h-6 flex justify-center text-white rounded-lg bg-blue-500">
-                      {heroArticles.tag_list.length
-                        ? heroArticles.tag_list[0]
-                        : "Tech"}
-                    </p>
-                    <p className="text-3xl max-w-[300px]">
-                      {heroArticles.title}
-                    </p>
-                    <p>{new Date(heroArticles.published_at).toDateString()}</p>
+            <Link href={`blogs/${heroArticles.id}`}>
+              <div
+                key={index}
+                className="w-full sm:w-[800px] md:w-[1000px] lg:w-[1200px] h-[600px] bg-cover rounded-lg"
+                style={{ backgroundImage: `url(${heroArticles.cover_image})` }}
+              >
+                <div className="flex flex-col w-[1200px] p-4 h-full justify-end mx-6">
+                  <div className="w-full sm:w-[598px] h-[200px] bg-white rounded-xl">
+                    <div className="gap-7 p-3 flex flex-col">
+                      <p className="w-32 h-6 flex justify-center text-white rounded-lg bg-blue-500">
+                        {heroArticles.tag_list.length
+                          ? heroArticles.tag_list[0]
+                          : "Tech"}
+                      </p>
+                      <p className="text-3xl max-w-[300px]">
+                        {heroArticles.title}
+                      </p>
+                      <p>
+                        {new Date(heroArticles.published_at).toDateString()}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

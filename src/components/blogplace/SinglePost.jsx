@@ -4,8 +4,8 @@ export const SinglePost = ({ article }) => {
   return (
     <div>
       <div className="w-full ">
-        <div className="container mx-auto px-4 sm:px-0 ">
-          <div>
+        <div className="container mx-auto gap-8 px-4 sm:px-0 ">
+          <div className="max-w-[804px] mx-auto">
             <p className=" text-2xl sm:text-3xl font-semibold mb-4">
               The Impact of Technology on the Workplace: How Technology is
               Changing

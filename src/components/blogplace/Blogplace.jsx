@@ -7,9 +7,11 @@ export const Blogplace = ({ blogplaceArticles, handleMorePageClick }) => {
         {blogplaceArticles.map((blogplaceArticles) => {
           return (
             <Link href={`/blogs/${blogplaceArticles?.id}`}>
-              <div className="w-[392px] flex flex-col gap-3 border-2 p-2 border-[#E8E8EA] rounded-lg ">
+              <div className="w-[392px] flex flex-col shadow-md hover:shadow-[0_0_15px_rgba(72,187,255,0.8)]  gap-3 border-2 p-2 border-[#E8E8EA] rounded-lg ">
                 <div
-                  className={"w-[360px] h-[240px] rounded-lg hover:scale-105  "}
+                  className={
+                    "w-[360px]  h-[240px] rounded-lg hover:scale-105  "
+                  }
                   style={{
                     backgroundImage: `url(${blogplaceArticles?.cover_image})`,
                   }}
@@ -28,7 +30,7 @@ export const Blogplace = ({ blogplaceArticles, handleMorePageClick }) => {
       <div className="flex  items-center justify-center">
         <button
           onClick={handleMorePageClick}
-          className="w-16 p-1 rounded-lg flex h-14 border-2"
+          className="w-22 p-1 rounded-lg flex h-11 shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_15px_rgba(72,187,255,0.8)] border-2"
         >
           load more
         </button>

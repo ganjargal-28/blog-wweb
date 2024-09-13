@@ -13,7 +13,7 @@ export const TrendingList = ({ trendingListArticles }) => {
 
             return (
               <Link href={`/blogs/${trendingListArticles.id}`}>
-                <div className="w-[300px] flex flex-col gap-5 border-2 p-2 border-[#E8E8EA] rounded-lg ">
+                <div className="w-[300px] flex flex-col gap-8 border-2 p-2 border-[#E8E8EA] rounded-lg ">
                   <div
                     className={
                       "w-290px] h-[240px] rounded-lg hover:scale-105  "

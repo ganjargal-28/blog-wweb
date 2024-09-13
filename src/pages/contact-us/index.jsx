@@ -5,9 +5,7 @@ import { Header } from "@/components/headers/Header";
 export default function Contact() {
   return (
     <div>
-      <Header />
       <Sign />
-      <Footer />
     </div>
   );
 }

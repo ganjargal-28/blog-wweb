@@ -9,7 +9,7 @@ export const Header = ({ changeScreen }) => {
   const [clickbutton, setClickbutton] = useState("home");
   const [isOpen, setIsopen] = useState(false);
   const [data, setData] = useState([]);
-  const [articles, setArticles] = useState([]);
+
   const fetchData = async () => {
     try {
       const response = await fetch(`https://dev.to/api/articles`);
@@ -19,8 +19,13 @@ export const Header = ({ changeScreen }) => {
       console.log(error);
     }
   };
+  if (typeof window !== "undefined") {
+    document.body.addEventListener("mouseup", (event) => {
+      setIsopen(false);
+    });
+  }
   const handleSearch = (value) => {
-    const filterArray = articles.filter((filter) =>
+    const filterArray = data.filter((filter) =>
       filter.title.toLowerCase().includes(value.toLowerCase())
     );
     setData(filterArray);
@@ -56,7 +61,11 @@ export const Header = ({ changeScreen }) => {
             className=" border-2 text-black rounded-lg bg-[var(--secondary-100)] outline-none"
           />
           <div className="absolute top-[40px] h-[400px] overflow-scroll hover:bg-blue-100 max-w-[400px] bg-white rounded-lg  outline-none z-10">
-            <div className="flex flex-col flex-wrap gap-5 text-black bg-transparent">
+            <div
+              className={`${
+                isOpen ? "flex " : ""
+              } flex flex-col flex-wrap gap-5 text-black bg-transparent`}
+            >
               {data.map((articles, index) => (
                 <Link href={`blogs/${articles.id}`}>
                   <div
