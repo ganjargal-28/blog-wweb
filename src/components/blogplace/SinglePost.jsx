@@ -1,30 +1,36 @@
 import { Header } from "../headers/Header";
 import { Footer } from "../footer/Footer";
+
 export const SinglePost = ({ article }) => {
   return (
     <div>
       <div className="w-full ">
-        <div className="container mx-auto gap-8 px-4 sm:px-0 ">
-          <div className="max-w-[804px] mx-auto">
+        <div className="container mx-auto px-4 sm:px-0 ">
+          <div>
             <p className=" text-2xl sm:text-3xl font-semibold mb-4">
               The Impact of Technology on the Workplace: How Technology is
               Changing
             </p>
-            <div className="flex  items-center gap-3">
-              <img src="profile.png" alt="" />
-              <p>Tracey Wilson</p>
-              <p>August 20, 2022</p>
+            <div className="flex items-center gap-3">
+              <img
+                src="profile.png"
+                alt="author"
+                className="w-12 h-12 rounded-full"
+              />
+              <p className="text-sm sm:text-base">Tracey Wilson</p>
+              <p className="text-sm sm:text-base">August 20, 2022</p>
             </div>
+            {/* Cover image, now full width and responsive */}
             <div
-              className={"w-[804px] h-[400px] rounded-lg "}
+              className="w-full h-[300px] sm:h-[400px] rounded-lg bg-cover bg-center"
               style={{ backgroundImage: `url(${article.cover_image})` }}
             ></div>
-            <h1>{article?.tag_list}</h1>
-            <p>{article?.description}</p>
+            <h1 className="text-lg sm:text-xl mt-4">{article?.tag_list}</h1>
+            <p className="mt-2 text-sm sm:text-base">{article?.description}</p>
 
-            <div className="max-w-[804px] ">
-              <div className="gap-2  flex flex-col">
-                <p>
+            <div className="max-w-full sm:max-w-[804px] mt-4">
+              <div className="gap-2 flex flex-col">
+                <p className="text-sm sm:text-base">
                   Traveling is an enriching experience that opens up new
                   horizons, exposes us to different cultures, and creates
                   memories that last a lifetime. However, traveling can also be
@@ -38,8 +44,10 @@ export const SinglePost = ({ article }) => {
                   in the local language can also go a long way in making
                   connections and showing respect.
                 </p>
-                <p className="text-6xs flex">Research Your Destination</p>
-                <p>
+                <p className="text-sm sm:text-base text-blue-500">
+                  Research Your Destination
+                </p>
+                <p className="text-sm sm:text-base">
                   Before embarking on your journey, take the time to research
                   your destination. This includes understanding the local
                   culture, customs, and laws, as well as identifying top
@@ -53,8 +61,10 @@ export const SinglePost = ({ article }) => {
                   eleifend quam adipiscing vitae. Viverra adipiscing at in
                   tellus.
                 </p>
-                <h1>Plan Your Itinerary</h1>
-                <p>
+                <h1 className="text-lg sm:text-xl font-semibold">
+                  Plan Your Itinerary
+                </h1>
+                <p className="text-sm sm:text-base">
                   While it's essential to leave room for spontaneity and
                   unexpected adventures, having a rough itinerary can help you
                   make the most of your time and budget. Identify the must-see
@@ -74,4 +84,5 @@ export const SinglePost = ({ article }) => {
     </div>
   );
 };
+
 export default SinglePost;
