@@ -36,29 +36,29 @@ export const Hero = () => {
   return (
     <div className="w-full">
       <div className="container mt-5 mx-auto">
-        {/* Scrollable container avna */}
+        {/* Scrollable container */}
         <div
           ref={containerRef}
           className="overflow-x-scroll scroll-smooth flex gap-4"
         >
-          {heroArticles.map((heroArticles, index) => (
+          {heroArticles.map((heroArticle, index) => (
             <div
               key={index}
-              className="w-full sm:w-[800px] md:w-[1000px] lg:w-[1200px] h-[600px] bg-cover rounded-lg"
-              style={{ backgroundImage: `url(${heroArticles.cover_image})` }}
+              className="flex-shrink-0 w-full sm:w-[800px] md:w-[1000px] lg:w-[1200px] h-[600px] bg-cover rounded-lg"
+              style={{ backgroundImage: `url(${heroArticle.cover_image})` }}
             >
-              <div className="flex flex-col w-[1200px] p-4 h-full justify-end mx-6">
+              <div className="flex flex-col w-full p-4 h-full justify-end mx-6 bg-gradient-to-t from-black via-transparent to-transparent">
                 <div className="w-full sm:w-[598px] h-[200px] bg-white rounded-xl">
                   <div className="gap-7 p-3 flex flex-col">
                     <p className="w-32 h-6 flex justify-center text-white rounded-lg bg-blue-500">
-                      {heroArticles.tag_list.length
-                        ? heroArticles.tag_list[0]
+                      {heroArticle.tag_list.length
+                        ? heroArticle.tag_list[0]
                         : "Tech"}
                     </p>
-                    <p className="text-3xl max-w-[300px]">
-                      {heroArticles.title}
+                    <p className="text-3xl sm:text-2xl">{heroArticle.title}</p>
+                    <p className="text-sm text-gray-300">
+                      {new Date(heroArticle.published_at).toDateString()}
                     </p>
-                    <p>{new Date(heroArticles.published_at).toDateString()}</p>
                   </div>
                 </div>
               </div>
@@ -66,7 +66,7 @@ export const Hero = () => {
           ))}
         </div>
 
-        {/* Scrolliin buttons */}
+        {/* Scroll buttons */}
         <div className="flex gap-4 justify-end p-2">
           <div
             className="border-2 w-7 h-7 flex items-center justify-center rounded-lg cursor-pointer"
