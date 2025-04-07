@@ -23,12 +23,10 @@ const Blogs = () => {
 
   return (
     <div>
-      <Header />
       <BlogListing
         articles={articles}
         handleMorePageClick={handleMorePageClick}
       />
-      <Footer />
     </div>
   );
 };

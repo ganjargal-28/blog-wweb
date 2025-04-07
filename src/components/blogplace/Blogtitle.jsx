@@ -29,9 +29,10 @@ const UseEffectPage = () => {
       {articles.map((article) => {
         return <div>{article.title}</div>;
       })}
-      <button className="border border-red-400" onClick={handleMorePageClick}>
-        Load more
-      </button>
+      <button
+        className="border border-red-400"
+        onClick={handleMorePageClick}
+      ></button>
     </div>
   );
 };

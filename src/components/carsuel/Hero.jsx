@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 
 export const Hero = () => {
@@ -28,7 +29,6 @@ export const Hero = () => {
     }
   };
 
-  // Fetch data on component mount
   useEffect(() => {
     fetchData();
   }, []);

@@ -1,16 +1,14 @@
 import { useEffect, useState } from "react";
-import { Header } from "../headers/Header";
+
 import { Hero } from "../carsuel/Hero";
 import { Menu } from "../menu/Menu";
 import { Trend } from "../trend/Trend";
-import { Footer } from "../footer/Footer";
 
 import { Blogplace } from "../blogplace/Blogplace";
-import { TrendingList } from "../trend/TrendingList";
 
 const Homepage = () => {
   const [blogplaceArticles, setBlogplaceArticles] = useState([]);
-  const [page, setPage] = useState(4); // usestate bolgoj
+  const [page, setPage] = useState(); // usestate bolgoj
   const [filter, setFilter] = useState([]);
   const [trendingListArticles, setTrendingListArticles] = useState([]);
   const [heroArticles, setHeroArticles] = useState([]);
@@ -39,20 +37,14 @@ const Homepage = () => {
   }, [blogplaceArticles]);
 
   useEffect(() => {
-    setTrendingListArticles(trendingListArticles);
-  }, [trendingListArticles]);
-  useEffect(() => {
     setHeroArticles(heroArticles);
   }, [heroArticles]);
   return (
     <div className="md:">
-      <Header />
       <Hero heroArticles={heroArticles} />
-      <TrendingList trendingListArticles={trendingListArticles} />
+      <Trend />
       <Menu blogplaceArticles={blogplaceArticles} setFilter={setFilter} />
       <Blogplace blogplaceArticles={blogplaceArticles} />
-
-      <Footer />
     </div>
   );
 };

@@ -29,11 +29,8 @@ const SinglepostDetail = () => {
   console.log("articlesss", article);
   return (
     <div className="w-full ">
-      <Header />
       <SinglePost article={article} />
       {/* {article?.title} */}
-
-      <Footer />
     </div>
   );
 };
